@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from .models import User
-from . import database
+from .extensions import database
 
 
 blueprint = Blueprint('api', __name__, url_prefix='/api')
@@ -14,7 +14,7 @@ def create_user():
     
     try:
         user = User(
-            name=data['name']
+            name=data['name'],
             birth_date=data['birth_date']
         )
 

@@ -1,26 +1,23 @@
-# https://flask.palletsprojects.com/en/stable/patterns/sqlalchemy/
-
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
+from .extensions import database
 from .routes import blueprint
 
-database = SQLAlchemy()
-
-def api():
+def create_app():
     load_dotenv()
 
     app = Flask(__name__)
 
+    # Configurações do banco de dados
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
-    app.config['ALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    database.init_app(api)
+    database.init_app(app)
 
+    # Registrar rotas
     with app.app_context():
         app.register_blueprint(blueprint)
         database.create_all()
-
 
     return app
