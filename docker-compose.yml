@@ -6,7 +6,8 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - FLASK_APP=app
+      # - FLASK_APP=app
+      - FLASK_APP=app:app
       - FLASK_ENV=development
       - DATABASE_URI=mysql+pymysql://flask_user:flask_password@db/flask_db
     volumes:
