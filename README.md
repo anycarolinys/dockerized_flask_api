@@ -62,7 +62,7 @@ docker-compose down
 ## **Como foi desenvolvido o projeto**  
 **1. Decisão da tecnologia**
 - Escolhi linguagem Python pela familiaridade
-- Decidi entre os frameworks mais conhecidos vendo [comparação](https://www.netguru.com/blog/python-flask-versus-fastapi) entre os mesmos
+- Decidi entre os frameworks mais conhecidos (Flask e FastAPI) vendo [comparação](https://www.netguru.com/blog/python-flask-versus-fastapi) entre os mesmos
 - Escolhi Flask por ser mais antigo, supondo haver mais recursos e melhor documentação
 
 **2. Implementação dos arquivos para o Docker**  
